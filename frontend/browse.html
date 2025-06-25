@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Items - EcoSwap</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>EcoSwap</h1>
+            </div>
+            <nav>
+                <div class="hamburger">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="browse.html" class="active">Browse</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="logout.html" class="logout-btn">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="browse-header">
+            <div class="container">
+                <h2>Browse Items</h2>
+                <div class="filter-container">
+                    <div class="filter">
+                        <label for="category-filter">Filter by Category:</label>
+                        <select id="category-filter">
+                            <option value="all">All Categories</option>
+                            <option value="clothing">Clothing</option>
+                            <option value="books">Books</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="tools">Tools</option>
+                        </select>
+                    </div>
+                    <div class="search">
+                        <input type="text" id="search-items" placeholder="Search items...">
+                        <button class="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="items-grid">
+            <div class="container">
+                <div class="items">
+                    <!-- Item 1 -->
+                    <div class="item-card" data-category="clothing">
+                        <div class="item-image">
+                            <img src="https://via.placeholder.com/300x200" alt="Blue T-shirt">
+                        </div>
+                        <div class="item-details">
+                            <h3>Blue T-shirt</h3>
+                            <p>Barely worn blue t-shirt, size M. Perfect for casual wear.</p>
+                            <button class="btn swap-btn">Request Swap</button>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="item-card" data-category="books">
+                        <div class="item-image">
+                            <img src="https://via.placeholder.com/300x200" alt="Novel Collection">
+                        </div>
+                        <div class="item-details">
+                            <h3>Novel Collection</h3>
+                            <p>Set of 3 bestselling novels in excellent condition.</p>
+                            <button class="btn swap-btn">Request Swap</button>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="item-card" data-category="electronics">
+                        <div class="item-image">
+                            <img src="https://via.placeholder.com/300x200" alt="Wireless Headphones">
+                        </div>
+                        <div class="item-details">
+                            <h3>Wireless Headphones</h3>
+                            <p>Bluetooth headphones with noise cancellation. Works perfectly.</p>
+                            <button class="btn swap-btn">Request Swap</button>
+                        </div>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="item-card" data-category="tools">
+                        <div class="item-image">
+                            <img src="https://via.placeholder.com/300x200" alt="Gardening Tools">
+                        </div>
+                        <div class="item-details">
+                            <h3>Gardening Tools</h3>
+                            <p>Set of basic gardening tools, perfect for beginners.</p>
+                            <button class="btn swap-btn">Request Swap</button>
+                        </div>
+                    </div>
+                    <!-- Item 5 -->
+                    <div class="item-card" data-category="clothing">
+                        <div class="item-image">
+                            <img src="https://via.placeholder.com/300x200" alt="Winter Jacket">
+                        </div>
+                        <div class="item-details">
+                            <h3>Winter Jacket</h3>
+                            <p>Warm winter jacket, size L. Used for one season only.</p>
+                            <button class="btn swap-btn">Request Swap</button>
+                        </div>
+                    </div>
+                    <!-- Item 6 -->
+                    <div class="item-card" data-category="books">
+                        <div class="item-image">
+                            <img src="https://via.placeholder.com/300x200" alt="Cookbook Collection">
+                        </div>
+                        <div class="item-details">
+                            <h3>Cookbook Collection</h3>
+                            <p>Set of 4 cookbooks with recipes from around the world.</p>
+                            <button class="btn swap-btn">Request Swap</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Swap Request Modal -->
+    <div class="modal" id="swap-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Request Swap</h2>
+            <p>You're requesting to swap for: <span id="requested-item"></span></p>
+            <form id="swap-form">
+                <div class="form-group">
+                    <label for="your-item">Select your item to offer:</label>
+                    <select id="your-item" required>
+                        <option value="">Select an item</option>
+                        <option value="item1">Red Sweater</option>
+                        <option value="item2">Fiction Books (Set of 2)</option>
+                        <option value="item3">Desk Lamp</option>
+                        <option value="item4">Kitchen Utensils</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="swap-message">Message (optional):</label>
+                    <textarea id="swap-message" rows="3" placeholder="Add a message to the item owner"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn cancel-btn">Cancel</button>
+                    <button type="submit" class="btn primary-btn">Confirm Request</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>EcoSwap</h2>
+                    <p>Swap, Save & Sustain</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="browse.html">Browse</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 EcoSwap. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

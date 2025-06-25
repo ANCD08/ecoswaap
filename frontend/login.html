@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Login Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            display: flex;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+        }
+
+        .welcome-panel {
+            flex: 0 0 60%;
+            background: linear-gradient(135deg, #6a11cb 0%, #fc5c7d 100%);
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .abstract-shape {
+            position: absolute;
+            border-radius: 50px;
+            opacity: 0.2;
+            transform: rotate(-45deg);
+        }
+
+        .shape-1 {
+            width: 400px;
+            height: 80px;
+            background: #ff7e5f;
+            top: 20%;
+            left: -100px;
+        }
+
+        .shape-2 {
+            width: 300px;
+            height: 60px;
+            background: #fc5c7d;
+            top: 40%;
+            right: -50px;
+        }
+
+        .shape-3 {
+            width: 350px;
+            height: 70px;
+            background: #6a11cb;
+            bottom: 30%;
+            left: 50%;
+        }
+
+        .welcome-content {
+            text-align: center;
+            color: white;
+            z-index: 1;
+            max-width: 60%;
+        }
+
+        .welcome-content h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .welcome-content p {
+            color: #dddddd;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .login-panel {
+            flex: 0 0 40%;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .login-form {
+            width: 100%;
+            max-width: 350px;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .form-group i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6a11cb;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 40px;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus {
+            border-color: #6a11cb;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(106, 17, 203, 0.1);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(106, 17, 203, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .welcome-panel,
+            .login-panel {
+                flex: 0 0 100%;
+            }
+
+            .welcome-panel {
+                padding: 60px 20px;
+            }
+
+            .welcome-content {
+                max-width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="welcome-panel">
+            <div class="abstract-shape shape-1"></div>
+            <div class="abstract-shape shape-2"></div>
+            <div class="abstract-shape shape-3"></div>
+            <div class="welcome-content">
+                <h1>Welcome to EcoSwap</h1>
+                <p>Join our community of eco-conscious individuals and start swapping items today! Fostering a sustainable lifestyle and reducing waste</p>
+            </div>
+        </div>
+        <div class="login-panel">
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="username" placeholder="Username" required>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            if (username && password) {
+                localStorage.setItem('user', JSON.stringify({
+                    username: username,
+                    isLoggedIn: true
+                }));
+                window.location.href = 'index.html';
+            } else {
+                alert('Please fill in all fields');
+            }
+        });
+    </script>
+</body>
+</html>

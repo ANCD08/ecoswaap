@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - EcoSwap</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>EcoSwap</h1>
+            </div>
+            <nav>
+                <div class="hamburger">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="browse.html">Browse</a></li>
+                    <li><a href="profile.html" class="active">Profile</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="logout.html" class="logout-btn">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="profile-header">
+            <div class="container">
+                <div class="profile-info">
+                    <div class="profile-avatar">
+                        <img src="" alt="Profile Avatar">
+                    </div>
+                    <div class="profile-details">
+                        <h2>Eng Agbor</h2>
+                        <p><i class="fas fa-envelope"></i> Eng.Agbor@example.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Yaounde, Cameroon</p>
+                        <p><i class="fas fa-calendar-alt"></i> Member since: June 2025</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="profile-tabs">
+            <div class="container">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="my-items">My Items</button>
+                    <button class="tab-btn" data-tab="swap-history">Swap History</button>
+                </div>
+
+                <div class="tab-content">
+                    <!-- My Items Tab -->
+                    <div class="tab-pane active" id="my-items">
+                        <div class="user-items">
+                            <!-- Item 1 -->
+                            <div class="item-card">
+                                <div class="item-image">
+                                    <img src="https://via.placeholder.com/300x200" alt="Red Sweater">
+                                </div>
+                                <div class="item-details">
+                                    <h3>Red Sweater</h3>
+                                    <p>Warm red sweater, size M. Perfect for winter.</p>
+                                    <div class="item-actions">
+                                        <button class="btn edit-btn"><i class="fas fa-edit"></i> Edit</button>
+                                        <button class="btn delete-btn"><i class="fas fa-trash"></i> Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Item 2 -->
+                            <div class="item-card">
+                                <div class="item-image">
+                                    <img src="https://via.placeholder.com/300x200" alt="Fiction Books">
+                                </div>
+                                <div class="item-details">
+                                    <h3>Fiction Books (Set of 2)</h3>
+                                    <p>Two bestselling fiction books in great condition.</p>
+                                    <div class="item-actions">
+                                        <button class="btn edit-btn"><i class="fas fa-edit"></i> Edit</button>
+                                        <button class="btn delete-btn"><i class="fas fa-trash"></i> Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Item 3 -->
+                            <div class="item-card">
+                                <div class="item-image">
+                                    <img src="https://via.placeholder.com/300x200" alt="Desk Lamp">
+                                </div>
+                                <div class="item-details">
+                                    <h3>Desk Lamp</h3>
+                                    <p>Modern desk lamp, adjustable brightness. Like new.</p>
+                                    <div class="item-actions">
+                                        <button class="btn edit-btn"><i class="fas fa-edit"></i> Edit</button>
+                                        <button class="btn delete-btn"><i class="fas fa-trash"></i> Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Item 4 -->
+                            <div class="item-card">
+                                <div class="item-image">
+                                    <img src="https://via.placeholder.com/300x200" alt="Kitchen Utensils">
+                                </div>
+                                <div class="item-details">
+                                    <h3>Kitchen Utensils</h3>
+                                    <p>Set of stainless steel kitchen utensils. Barely used.</p>
+                                    <div class="item-actions">
+                                        <button class="btn edit-btn"><i class="fas fa-edit"></i> Edit</button>
+                                        <button class="btn delete-btn"><i class="fas fa-trash"></i> Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn primary-btn add-item-btn"><i class="fas fa-plus"></i> Add New Item</button>
+                    </div>
+
+                    <!-- Swap History Tab -->
+                    <div class="tab-pane" id="swap-history">
+                        <div class="swap-history">
+                            <table class="swap-table">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Item Given</th>
+                                        <th>Item Received</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>May 15, 2023</td>
+                                        <td>Green Jacket</td>
+                                        <td>Hiking Boots</td>
+                                        <td><span class="status completed">Completed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>April 28, 2023</td>
+                                        <td>Coffee Table</td>
+                                        <td>Bookshelf</td>
+                                        <td><span class="status completed">Completed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>June 2, 2023</td>
+                                        <td>Blender</td>
+                                        <td>Toaster</td>
+                                        <td><span class="status pending">Pending</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>June 10, 2023</td>
+                                        <td>Yoga Mat</td>
+                                        <td>Dumbbells (Set)</td>
+                                        <td><span class="status pending">Pending</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>EcoSwap</h2>
+                    <p>Swap, Save & Sustain</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="browse.html">Browse</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 EcoSwap. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

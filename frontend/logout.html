@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout | EcoSwap</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: linear-gradient(135deg, #6a11cb, #2575fc); }
+        .logout-container { background: #fff; padding: 40px 32px; border-radius: 16px; box-shadow: 0 8px 32px rgba(106,17,203,0.08); text-align: center; }
+        .logout-container h1 { color: #2575fc; margin-bottom: 16px; }
+        .logout-container p { color: #444; margin-bottom: 24px; }
+        .logout-container .btn { background: linear-gradient(135deg, #6a11cb, #2575fc); color: #fff; border: none; border-radius: 25px; padding: 12px 32px; font-size: 16px; font-weight: 600; cursor: pointer; transition: box-shadow 0.2s; }
+        .logout-container .btn:hover { box-shadow: 0 4px 16px rgba(37,117,252,0.15); }
+    </style>
+</head>
+<body>
+    <div class="logout-container">
+        <h1>Logging Out...</h1>
+        <p>You have been successfully logged out of EcoSwap.</p>
+        <button class="btn" id="goLogin">Go to Login</button>
+    </div>
+    <script>
+        // Remove user from localStorage and redirect
+        localStorage.removeItem('user');
+        document.getElementById('goLogin').addEventListener('click', function() {
+            window.location.href = 'login.html';
+        });
+        // Optionally auto-redirect after a short delay
+        setTimeout(function() {
+            window.location.href = 'login.html';
+        }, 3000);
+    </script>
+</body>
+</html>
